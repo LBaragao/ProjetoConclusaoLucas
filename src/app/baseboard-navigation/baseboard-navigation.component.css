@@ -1,0 +1,48 @@
+.group-buttons {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  background-color: #fff;
+  border-radius: 8px;
+  align-items: center;
+  height: 42px;
+}
+
+.btn-navigation {
+  background-color: #fff;
+  color: #76ABE1;
+  width: 400px;
+  height: 42px;
+  text-transform: uppercase;
+  border-color: #76ABE1;
+  border-style: hidden;
+  font: normal normal bold 15px Segoe UI;
+  justify-content: center;
+}
+
+.btn-navigation-border-left {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.btn-navigation-border-right {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.separate {
+  background-color: #76ABE1;
+  width: 2px;
+  height: 20px;
+}
+
+.indicator {
+  width: 70%;
+  margin: 12px auto;
+  height: 65%;
+  text-align: center;
+}
+
+.indicator-active {
+  border-bottom: #76ABE1 1px solid;
+}
