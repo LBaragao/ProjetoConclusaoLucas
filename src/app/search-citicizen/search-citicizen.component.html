@@ -4,34 +4,35 @@
     <div class="form">
       <p class="observation">Obrigatório (*)</p>
       <form [formGroup]="registerForm">
+        <div class="content-inline search">
+          <mat-form-field class="full" >
+            <mat-label>CPF:</mat-label>
+            <input matInput formControlName="cpf" appCpfMask required type="text">
+            <mat-error *ngIf="registerForm.get('cpf')?.hasError">Campo Obrigatório</mat-error>
+          </mat-form-field>
+
+          <div class="btn-search" [ngClass]="{'btn-update-disable': !registerForm.valid}">Pesquisar Paciente</div>
+        </div>
+
         <div class="full">
           <mat-form-field class="full">
             <mat-label>Nome:</mat-label>
-            <input matInput formControlName="name" required>
-            <mat-error *ngIf="registerForm.get('name')?.hasError">Campo Obrigatório</mat-error>
+            <input matInput formControlName="name">
           </mat-form-field>
 
           <div class="content-inline">
-            <mat-form-field class="full" >
+            <mat-form-field class="half" >
               <mat-label>Data de Nascimento:</mat-label>
-              <input matInput formControlName="date" required [matDatepicker]="picker">
+              <input matInput formControlName="date"[matDatepicker]="picker">
               <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
-              <mat-error *ngIf="registerForm.get('date')?.hasError">Campo Obrigatório</mat-error>
-            </mat-form-field>
-
-            <mat-form-field class="full left-margin" >
-              <mat-label>CPF:</mat-label>
-              <input matInput formControlName="cpf" appCpfMask required type="text">
-              <mat-error *ngIf="registerForm.get('cpf')?.hasError">Campo Obrigatório</mat-error>
             </mat-form-field>
           </div>
 
           <div class="content-inline">
             <mat-form-field class="full" >
               <mat-label>Celular:</mat-label>
-              <input matInput formControlName="cellphone" appCellphoneMask required type="tel">
-              <mat-error *ngIf="registerForm.get('cellphone')?.hasError">Campo Obrigatório</mat-error>
+              <input matInput formControlName="cellphone" appCellphoneMask type="tel">
             </mat-form-field>
 
             <mat-form-field class="full left-margin" >
@@ -42,8 +43,7 @@
 
           <mat-form-field class="full" >
             <mat-label>Endereço:</mat-label>
-            <input matInput formControlName="address" required>
-            <mat-error *ngIf="registerForm.get('address')?.hasError">Campo Obrigatório</mat-error>
+            <input matInput formControlName="address">
           </mat-form-field>
 
           <div class="content-inline">
@@ -54,21 +54,19 @@
 
             <mat-form-field class="full left-margin" >
               <mat-label>CEP:</mat-label>
-              <input matInput formControlName="cep" appCepMask required type="text">
-              <mat-error *ngIf="registerForm.get('cep')?.hasError">Campo Obrigatório</mat-error>
+              <input matInput formControlName="cep" appCepMask type="text">
             </mat-form-field>
           </div>
 
           <div class="content-inline">
             <mat-form-field class="full" >
               <mat-label>Cidade:</mat-label>
-              <input matInput formControlName="city" required>
-              <mat-error *ngIf="registerForm.get('city')?.hasError">Campo Obrigatório</mat-error>
+              <input matInput formControlName="city">
             </mat-form-field>
 
             <mat-form-field class="full left-margin">
               <mat-label>Estado:</mat-label>
-              <mat-select formControlName="state" required>
+              <mat-select formControlName="state">
                 <mat-option>-- Selecione um Estado --</mat-option>
                 <mat-option value="AC">Acre</mat-option>
                 <mat-option value="AL">Alagoas</mat-option>
@@ -98,19 +96,14 @@
                 <mat-option value="SE">Sergipe</mat-option>
                 <mat-option value="TO">Tocantins</mat-option>
               </mat-select>
-              <mat-error *ngIf="registerForm.get('state')?.hasError">Campo Obrigatório</mat-error>
             </mat-form-field>
           </div>
 
           <mat-form-field class="full" >
             <mat-label>Email:</mat-label>
-            <input matInput formControlName="email" required type="email">
-            <mat-error *ngIf="registerForm.get('email')?.hasError">Campo Obrigatório</mat-error>
+            <input matInput formControlName="email" type="email">
           </mat-form-field>
 
-          <div class="content-center">
-            <div class="btn-register" [ngClass]="{'btn-register-disable': !registerForm.valid}">cadastrar paciente</div>
-          </div>
         </div>
         
       </form>
