@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedComponentModule } from '../shared-component.module';
-import { RegisterCiticizenComponent } from './register-citicizen.component';
-import { RegisterCiticizenRoutingModule } from './register-citicizen-routing.module';
+import { UpdateCiticizenComponent } from './update-citicizen.component';
+import { UpdateCiticizenRoutingModule } from './update-citicizen-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
@@ -13,13 +13,11 @@ import { CellphoneMaskDirective } from './cellphone-mask.directive';
 import { TelephoneMaskDirective } from './telephone-mask.directive';
 import { CepMaskDirective } from './cep-mask.directive';
 
-
-
 @NgModule({
-  declarations: [RegisterCiticizenComponent, CpfMaskDirective, CellphoneMaskDirective, TelephoneMaskDirective, CepMaskDirective],
+  declarations: [UpdateCiticizenComponent, CpfMaskDirective, CellphoneMaskDirective, TelephoneMaskDirective, CepMaskDirective],
   imports: [
     CommonModule,
-    RegisterCiticizenRoutingModule,
+    UpdateCiticizenRoutingModule,
     SharedComponentModule,
     ReactiveFormsModule,
     MatDatepickerModule,
@@ -27,4 +25,4 @@ import { CepMaskDirective } from './cep-mask.directive';
   ],
   providers: [provideNativeDateAdapter(), { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }]
 })
-export class RegisterCiticizenModule { }
+export class UpdateCiticizenModule { }
