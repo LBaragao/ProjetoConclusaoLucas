@@ -9,6 +9,9 @@ const routes: Routes = [
     children: [
       {
         path: 'register', loadChildren: () => import('../register-citicizen/register-citicizen.module').then(m => m.RegisterCiticizenModule)
+      },
+      {
+        path: 'update', loadChildren: () => import('../update-citicizen/update-citicizen.module').then(m => m.UpdateCiticizenModule)
       }
   ] },
   // { path: 'register', loadChildren: () => import('../register-citicizen/register-citicizen.module').then(m => m.RegisterCiticizenModule) }
