@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="form-group">
+    <h2 class="tittle">cadastro</h2>
+    <div class="form">
+      <form [formGroup]="registerForm">
+        <h3 class="instruction">Insira o cpf do paciente que será excluído</h3>
+        <div class="content-inline search">
+          <mat-form-field class="full">
+            <mat-label>CPF:</mat-label>
+            <input matInput formControlName="cpf" appCpfMask required type="text">
+            <mat-error *ngIf="registerForm.get('cpf')?.hasError">Campo Obrigatório</mat-error>
+          </mat-form-field>
+
+          <div class="btn-search">Pesquisar Paciente</div>
+        </div>
+
+        <div class="content-center">
+          <div class="btn-delete" [ngClass]="{'btn-delete-disable': !registerForm.valid}">excluir paciente</div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+  <div class="baseboard-buttons">
+    <app-baseboard-navigation></app-baseboard-navigation>
+  </div>
+
+  <div class="page-indicator-citicizen"></div>
+
+</div>
