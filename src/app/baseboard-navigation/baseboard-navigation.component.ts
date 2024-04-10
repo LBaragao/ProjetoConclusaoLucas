@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import {Location} from '@angular/common';
 
 @Component({
@@ -10,12 +10,13 @@ import {Location} from '@angular/common';
 })
 export class BaseboardNavigationComponent {
 
-  constructor(private router: Router, private location: Location) {
-    
-  }
+  constructor(private router: Router, private location: Location, private activedRoute: ActivatedRoute) {}
 
   back(): void {
     //this.router.navigate([".."]);
     this.location.back();
-}
+  }
+  navigate(route: string){
+    this.router.navigate([route], {relativeTo: this.activedRoute});
+  }
 }
