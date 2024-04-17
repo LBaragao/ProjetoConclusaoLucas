@@ -12,6 +12,8 @@ import { CpfMaskDirective } from './cpf-mask.directive';
 import { CellphoneMaskDirective } from './cellphone-mask.directive';
 import { TelephoneMaskDirective } from './telephone-mask.directive';
 import { CepMaskDirective } from './cep-mask.directive';
+import { HttpClient } from '@angular/common/http';
+import { TaskService } from '../services/task.service';
 
 
 
@@ -25,6 +27,6 @@ import { CepMaskDirective } from './cep-mask.directive';
     MatDatepickerModule,
     MatSelectModule
   ],
-  providers: [provideNativeDateAdapter(), { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }]
+  providers: [provideNativeDateAdapter(), { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, HttpClient, TaskService]
 })
 export class RegisterCiticizenModule { }

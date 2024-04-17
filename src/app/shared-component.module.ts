@@ -3,7 +3,9 @@ import { BaseboardNavigationComponent } from './baseboard-navigation/baseboard-n
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 
 @NgModule({
@@ -11,16 +13,18 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule, 
     MatFormFieldModule, 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   declarations: [
-    BaseboardNavigationComponent
+    BaseboardNavigationComponent, DialogComponent
   ],
   exports: [
     BaseboardNavigationComponent, 
     MatInputModule, 
     MatFormFieldModule, 
-    FormsModule
+    FormsModule,
+    DialogComponent
   ]
 })
 export class SharedComponentModule { }
