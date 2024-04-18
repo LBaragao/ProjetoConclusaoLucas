@@ -61,6 +61,11 @@
   color: #74ABE133;
 }
 
+.btn-update-disable {
+  cursor: default;
+  color: #74ABE133;
+}
+
 .half {
   width: 48.3%;
 }

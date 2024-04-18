@@ -23,4 +23,8 @@ export class TaskService {
   updatePatient(person: PersonModel): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}/patients/${person.cpf}`, person);
   }
+
+  deletePatient(cpf: any): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/patients/${cpf}`);
+  }
 }
