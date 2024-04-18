@@ -9,6 +9,8 @@ import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select'
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { CpfMaskDirective } from './cpf-mask.directive';
+import { HttpClient } from '@angular/common/http';
+import { TaskService } from '../services/task.service';
 
 @NgModule({
   declarations: [DeleteCiticizenComponent, CpfMaskDirective],
@@ -20,6 +22,6 @@ import { CpfMaskDirective } from './cpf-mask.directive';
     MatDatepickerModule,
     MatSelectModule
   ],
-  providers: [provideNativeDateAdapter(), { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }]
+  providers: [provideNativeDateAdapter(), { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }, HttpClient, TaskService]
 })
 export class DeleteCiticizenModule { }

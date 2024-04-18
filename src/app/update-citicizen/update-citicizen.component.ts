@@ -72,8 +72,7 @@ export class UpdateCiticizenComponent {
       this.registerForm.get("state")?.value?.toString(),
       this.registerForm.get("email")?.value?.toString()
     );
-
-    console.log(person);
+    
     this.taskService.updatePatient(person).subscribe(
       { 
         next: (response) => {
