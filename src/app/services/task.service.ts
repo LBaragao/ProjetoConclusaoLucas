@@ -27,4 +27,8 @@ export class TaskService {
   deletePatient(cpf: any): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/patients/${cpf}`);
   }
+
+  registerVaccine(formData: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/vaccines/addVaccine`, formData)
+  }
 }
