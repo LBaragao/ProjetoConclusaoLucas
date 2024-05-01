@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-page',
@@ -11,11 +11,11 @@ import { Router } from '@angular/router';
 export class HomePageComponent {
 
   constructor(
-    private router: Router
+    private router: Router, private activedRoute: ActivatedRoute
 ) { }
 
-navigate(){
-  this.router.navigate(['/citicizen']);
+navigate(route: string){
+  this.router.navigate([route], {relativeTo: this.activedRoute});
 }
 
 }
