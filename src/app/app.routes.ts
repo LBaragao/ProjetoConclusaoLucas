@@ -11,5 +11,6 @@ export const routes: Routes = [
   {path: 'delete', loadChildren: () => import('./delete-citicizen/delete-citicizen.module').then(m => m.DeleteCiticizenModule) },
   {path: "vaccine", loadChildren: () => import('./vaccine-page/vaccine-page.module').then(m => m.VaccinePageModule) },
   {path: "registerVaccine", loadChildren: () => import('./register-vaccine/register-vaccine.module').then(m => m.RegisterVaccineModule) },
-  {path: "updateVaccine", loadChildren: () => import('./update-vaccine/update-vaccine.module').then(m => m.UpdateVaccineModule) }
+  {path: "updateVaccine", loadChildren: () => import('./update-vaccine/update-vaccine.module').then(m => m.UpdateVaccineModule) },
+  {path: "searchVaccine", loadChildren: () => import('./search-vaccine/search-vaccine.module').then(m => m.SearchVaccineModule) }
 ];
