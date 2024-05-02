@@ -12,5 +12,6 @@ export const routes: Routes = [
   {path: "vaccine", loadChildren: () => import('./vaccine-page/vaccine-page.module').then(m => m.VaccinePageModule) },
   {path: "registerVaccine", loadChildren: () => import('./register-vaccine/register-vaccine.module').then(m => m.RegisterVaccineModule) },
   {path: "updateVaccine", loadChildren: () => import('./update-vaccine/update-vaccine.module').then(m => m.UpdateVaccineModule) },
-  {path: "searchVaccine", loadChildren: () => import('./search-vaccine/search-vaccine.module').then(m => m.SearchVaccineModule) }
+  {path: "searchVaccine", loadChildren: () => import('./search-vaccine/search-vaccine.module').then(m => m.SearchVaccineModule) },
+  {path: "deleteVaccine", loadChildren: () => import('./delete-vaccine/delete-vaccine.module').then(m => m.DeleteVaccineModule) }
 ];
