@@ -76,7 +76,7 @@ export class UpdateCiticizenComponent {
     this.taskService.updatePatient(person).subscribe(
       { 
         next: (response) => {
-          this.dialog.open(DialogComponent, {data: "Atualizado com Sucesso"})
+          this.dialog.open(DialogComponent, {data: "Atualizado com sucesso"})
           .afterClosed().pipe(take(1)).subscribe(()=>this.location.back())
         }, 
         error: (err) => { console.error('Erro ao registrar:', err);}
