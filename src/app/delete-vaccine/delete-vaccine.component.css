@@ -1,0 +1,85 @@
+.form-group {
+  position: absolute;
+  right: 16%;
+  top: 24%;
+  text-align: center;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px 10px 20px;
+  width: 600px;
+  height: 340px;
+  text-align: left;
+}
+
+.form-fields {
+  padding-top: 10px;
+}
+
+.left-margin {
+  margin-left: 20px;
+}
+
+.btn-delete {
+  background-color: #74ABE130;
+  border: 1px solid #74ABE1;
+  border-radius: 8px;
+  text-transform: uppercase;
+  width: 306px;
+  height: 30px;
+  text-align: center;
+  padding-top: 14px;
+  font: normal normal bold 15px/20px Segoe UI;
+  letter-spacing: 0px;
+  color: #76ABE1;
+  cursor: pointer;
+  margin-top: 6%;
+}
+
+.btn-search {
+  background-color: #74ABE130;
+  border: 1px solid #74ABE1;
+  border-radius: 8px;
+  text-transform: uppercase;
+  width: 80%;
+  height: 30px;
+  text-align: center;
+  padding-top: 10px;
+  font: normal normal bold 15px/20px Segoe UI;
+  letter-spacing: 0px;
+  color: #76ABE1;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+.btn-delete-disable {
+  cursor: default;
+  color: #74ABE133;
+}
+
+.btn-update-disable {
+  cursor: default;
+  color: #74ABE133;
+}
+
+.half {
+  width: 48.3%;
+}
+
+.search {
+  display: flex;
+}
+
+.instruction {
+  text-transform: uppercase;
+  font: normal normal bold 18px/24px Segoe UI;
+  text-align: center;
+  color: #74ABE1;
+  padding-bottom: 6%;
+  padding-top: 8%;
+}
+

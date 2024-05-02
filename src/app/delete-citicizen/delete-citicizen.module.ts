@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SharedComponentModule } from '../shared-component.module';
 import { DeleteCiticizenComponent } from './delete-citicizen.component';
-import { DeleteCiticizenRoutingModule } from './delete-citicizen.routing.module';
+import { DeleteCiticizenRoutingModule } from './delete-citicizen-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';

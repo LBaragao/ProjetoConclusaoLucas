@@ -1,0 +1,32 @@
+<div class="content">
+  <div class="form-group">
+    <h2 class="tittle">cadastro</h2>
+    <div class="form">
+      <form [formGroup]="searchForm">
+        <h3 class="instruction">Escolha a vacina que será excluída</h3>
+        <div class="content-inline search">
+          <mat-form-field class="full">
+            <mat-label>Nome:</mat-label>
+            <input matInput formControlName="name" appCpfMask required type="text">
+            <mat-error *ngIf="searchForm.get('name')?.hasError">Campo Obrigatório</mat-error>
+          </mat-form-field>
+
+          <div class="btn-search" [ngClass]="{'btn-update-disable': !searchForm.valid}" (click)="searchVaccine()">Pesquisar vacina</div>
+        </div>
+
+        <div class="content-center">
+          <div class="btn-delete" [ngClass]="{'btn-delete-disable': !searchForm.valid}" (click)="searchVaccine()">excluir vacina</div>
+        </div>
+      </form>
+      
+        
+
+    </div>
+  </div>
+  <div class="baseboard-buttons">
+    <app-baseboard-navigation></app-baseboard-navigation>
+  </div>
+
+  <div class="page-indicator-citicizen"></div>
+
+</div>

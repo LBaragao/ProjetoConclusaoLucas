@@ -40,4 +40,8 @@ export class TaskService {
   updateVaccine(vaccine: VaccineModel): Observable<any> {
     return this.http.put<any>(`${this.baseUrl}/vaccines/${vaccine.name}`, vaccine);
   }
+
+  deleteVaccine(name: any): Observable<any> {
+    return this.http.delete<any>(`${this.baseUrl}/vaccines/${name}`);
+  }
 }
