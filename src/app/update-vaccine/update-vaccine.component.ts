@@ -8,12 +8,12 @@ import { take } from 'rxjs';
 import {Location} from '@angular/common';
 
 @Component({
-  selector: 'app-register-vaccine',
+  selector: 'app-update-vaccine',
   standalone: false,
-  templateUrl: './register-vaccine.component.html',
-  styleUrl: './register-vaccine.component.css'
+  templateUrl: './update-vaccine.component.html',
+  styleUrl: './update-vaccine.component.css'
 })
-export class RegisterVaccineComponent {
+export class UpdateVaccineComponent {
   registerForm = new FormGroup({
     name: new FormControl('', Validators.required),
     quantity: new FormControl<number | undefined>(undefined, Validators.required),
@@ -22,9 +22,31 @@ export class RegisterVaccineComponent {
     illness: new FormControl('', Validators.required)
   });
 
+  searchForm = new FormGroup({
+    name: new FormControl('', Validators.required)
+  })
+
   constructor(private taskService: TaskService, private dialog: MatDialog, private location: Location) {}
 
-  register() {
+  searchVaccine() {
+    const name = this.searchForm.get("name")?.value;
+    this.taskService.searchVaccine(name).subscribe(
+      {
+        next: (response) => {
+          this.registerForm.get("name")?.setValue(response.name)
+          this.registerForm.get("quantity")?.setValue(response.quantity)
+          this.registerForm.get("doses_number")?.setValue(response.doses_number)
+          this.registerForm.get("period_between_applications")?.setValue(response.period_between_applications)
+          this.registerForm.get("illness")?.setValue(response.illness)
+        },
+        error: (err) => {
+          console.log(err);
+        }
+      }
+    )
+  }
+
+  updateVaccine() {
     const vaccine = new VaccineModel(
       this.registerForm.get("name")?.value?.toString(),
       this.registerForm.get("quantity")?.value,
@@ -32,15 +54,15 @@ export class RegisterVaccineComponent {
       this.registerForm.get("period_between_applications")?.value,
       this.registerForm.get("illness")?.value?.toString()
     );
-    
-    this.taskService.registerVaccine(vaccine).subscribe(
-      { 
+
+    this.taskService.updateVaccine(vaccine).subscribe(
+      {
         next: (response) => {
-          this.dialog.open(DialogComponent, {data: "Registrada com sucesso"})
+          this.dialog.open(DialogComponent, {data: "Atualizada com sucesso"})
           .afterClosed().pipe(take(1)).subscribe(()=>this.location.back())
         }, 
         error: (err) => { console.error('Erro ao registrar:', err);}
-      } 
-    );
+      }
+    )
   }
 }

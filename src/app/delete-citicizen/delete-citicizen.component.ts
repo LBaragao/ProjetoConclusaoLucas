@@ -43,7 +43,7 @@ export class DeleteCiticizenComponent {
       {
         next: (response) => {
           if (response && response.success) { // Verifica se a exclusão foi bem-sucedida
-            this.dialog.open(DialogComponent, { data: "Excluído com Sucesso" })
+            this.dialog.open(DialogComponent, { data: "Excluído com sucesso" })
               .afterClosed().pipe(take(1)).subscribe(() => this.location.back());
           } else {
             this.dialog.open(DialogComponent, { data: "Erro ao excluir paciente" });

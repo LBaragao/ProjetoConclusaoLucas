@@ -49,7 +49,7 @@ export class RegisterCiticizenComponent {
     this.taskService.registerPatient(person).subscribe(
       { 
         next: (response) => {
-          this.dialog.open(DialogComponent, {data: "Registrado com Sucesso"})
+          this.dialog.open(DialogComponent, {data: "Registrado com sucesso"})
           .afterClosed().pipe(take(1)).subscribe(()=>this.location.back())
         }, 
         error: (err) => { console.error('Erro ao registrar:', err);}

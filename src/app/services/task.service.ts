@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PersonModel } from '../models/person.model';
+import { VaccineModel } from '../models/vaccine.model';
 
 @Injectable({
   providedIn: 'root'
@@ -30,5 +31,13 @@ export class TaskService {
 
   registerVaccine(formData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/vaccines/addVaccine`, formData)
+  }
+
+  searchVaccine(name: any): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/vaccines/${name}`);
+  }
+
+  updateVaccine(vaccine: VaccineModel): Observable<any> {
+    return this.http.put<any>(`${this.baseUrl}/vaccines/${vaccine.name}`, vaccine);
   }
 }
