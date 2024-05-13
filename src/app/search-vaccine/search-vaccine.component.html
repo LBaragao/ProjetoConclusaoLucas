@@ -7,8 +7,9 @@
         <div class="content-inline search">
           <mat-form-field class="full">
             <mat-label>Nome:</mat-label>
-            <input matInput formControlName="name" required>
-            <mat-error *ngIf="searchForm.get('name')?.hasError">Campo Obrigatório</mat-error>
+            <mat-select formControlName="name">
+              <mat-option *ngFor="let vacina of nomesVacinas" [value]="vacina">{{ vacina }}</mat-option>
+            </mat-select>
           </mat-form-field>
 
           <div class="btn-search" [ngClass]="{'btn-update-disable': !searchForm.valid}" (click)="searchVaccine()">Pesquisar Vacina</div>

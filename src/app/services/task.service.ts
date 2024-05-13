@@ -44,4 +44,8 @@ export class TaskService {
   deleteVaccine(name: any): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/vaccines/${name}`);
   }
+
+  getNomesVacinas(): Observable<string[]> {
+    return this.http.get<string[]>(`${this.baseUrl}/vaccines/allVaccines`)
+  }
 }

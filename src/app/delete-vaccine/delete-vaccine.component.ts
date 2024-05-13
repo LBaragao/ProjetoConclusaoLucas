@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from '../services/task.service';
 import { take } from 'rxjs';
@@ -12,27 +12,22 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './delete-vaccine.component.html',
   styleUrl: './delete-vaccine.component.css'
 })
-export class DeleteVaccineComponent {
+export class DeleteVaccineComponent implements OnInit {
   searchForm = new FormGroup({
     name: new FormControl('', Validators.required)
   })
 
+  nomesVacinas!: string[];
+
   constructor(private taskService: TaskService, private dialog: MatDialog, private location: Location) {}
 
-  searchVaccine() {
-    const name = this.searchForm.get("name")?.value;
-    this.taskService.searchVaccine(name).subscribe(
-      {
-        next: (response) => {
-          if (response && response.name) { // Verifica se a resposta contém dados válidos
-            this.dialog.open(DialogComponent, { data: "Vacina encontrada" });
-          } else {
-            this.dialog.open(DialogComponent, { data: "Vacina não encontrada" });
-          }
-        },
-        error: (err) => {
-          console.log(err);
-        }
+  ngOnInit(): void {
+    this.taskService.getNomesVacinas().subscribe(
+      (vacinas) => {
+        this.nomesVacinas = vacinas.map((vacina: any) => vacina.name);
+      },
+      (error) => {
+        console.error('Erro ao obter nomes das vacinas:', error)
       }
     )
   }

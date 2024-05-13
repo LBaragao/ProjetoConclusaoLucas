@@ -7,15 +7,15 @@
         <div class="content-inline search">
           <mat-form-field class="full">
             <mat-label>Nome:</mat-label>
-            <input matInput formControlName="name" appCpfMask required type="text">
-            <mat-error *ngIf="searchForm.get('name')?.hasError">Campo Obrigatório</mat-error>
+            <mat-select formControlName="name">
+              <mat-option *ngFor="let vacina of nomesVacinas" [value]="vacina">{{ vacina }}</mat-option>
+            </mat-select>
           </mat-form-field>
 
-          <div class="btn-search" [ngClass]="{'btn-update-disable': !searchForm.valid}" (click)="searchVaccine()">Pesquisar vacina</div>
         </div>
 
         <div class="content-center">
-          <div class="btn-delete" [ngClass]="{'btn-delete-disable': !searchForm.valid}" (click)="searchVaccine()">excluir vacina</div>
+          <div class="btn-delete" [ngClass]="{'btn-delete-disable': !searchForm.valid}" (click)="deleteVaccine()">excluir vacina</div>
         </div>
       </form>
       
@@ -27,6 +27,6 @@
     <app-baseboard-navigation></app-baseboard-navigation>
   </div>
 
-  <div class="page-indicator-citicizen"></div>
+  <div class="page-indicator-vaccine"></div>
 
 </div>

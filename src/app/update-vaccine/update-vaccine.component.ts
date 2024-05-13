@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TaskService } from '../services/task.service';
 import { VaccineModel } from '../models/vaccine.model';
@@ -13,7 +13,7 @@ import {Location} from '@angular/common';
   templateUrl: './update-vaccine.component.html',
   styleUrl: './update-vaccine.component.css'
 })
-export class UpdateVaccineComponent {
+export class UpdateVaccineComponent implements OnInit {
   registerForm = new FormGroup({
     name: new FormControl('', Validators.required),
     quantity: new FormControl<number | undefined>(undefined, Validators.required),
@@ -26,7 +26,20 @@ export class UpdateVaccineComponent {
     name: new FormControl('', Validators.required)
   })
 
+  nomesVacinas!: string[];
+
   constructor(private taskService: TaskService, private dialog: MatDialog, private location: Location) {}
+
+  ngOnInit(): void {
+    this.taskService.getNomesVacinas().subscribe(
+      (vacinas) => {
+        this.nomesVacinas = vacinas.map((vacina: any) => vacina.name);
+      },
+      (error) => {
+        console.error('Erro ao obter nomes das vacinas:', error)
+      }
+    )
+  }
 
   searchVaccine() {
     const name = this.searchForm.get("name")?.value;
