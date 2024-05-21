@@ -77,3 +77,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   margin-top: 45.8%;
   margin-left: 30%;
 }
+
+.page-indicator-vaccination {
+  width: 370px; /* largura */
+  height: 2px; /* altura */
+  background-color: #74ABE1; /* cor de fundo */
+  border: 0px solid #74ABE1; /* borda */
+  border-radius: 10px; /* borda arredondada */
+  position: relative; /* posição relativa */
+  z-index: 1; /* definindo a ordem de empilhamento */
+  margin-top: 45.8%;
+  margin-left: 50.9%;
+}
