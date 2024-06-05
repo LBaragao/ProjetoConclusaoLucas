@@ -48,7 +48,37 @@
   margin-top: 15px;
 }
 
+.btn-search {
+  background-color: #74ABE130;
+  border: 1px solid #74ABE1;
+  border-radius: 50%;
+  text-transform: uppercase;
+  width: 95px;
+  height: 30px;
+  text-align: center;
+  padding-top: 10px;
+  font: normal normal bold 15px/20px Segoe UI;
+  letter-spacing: 0px;
+  color: #76ABE1;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  align-self: center;
+  opacity: 1;
+}
+
 .btn-register-disable {
   cursor: default;
   color: #74ABE133;
+}
+
+.btn-search-disable {
+  cursor: default;
+  color: #74ABE133;
+  opacity: .6;
+}
+
+.icon-search {
+  width: 20px;
+  height: auto;
 }

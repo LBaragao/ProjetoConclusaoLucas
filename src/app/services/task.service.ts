@@ -48,4 +48,8 @@ export class TaskService {
   getNomesVacinas(): Observable<string[]> {
     return this.http.get<string[]>(`${this.baseUrl}/vaccines/allVaccines`)
   }
+
+  registerApplication(formData: any): Observable<any> {
+    return this.http.post<any>(`${this.baseUrl}/vaccination/addApplication`, formData)
+  }
 }
