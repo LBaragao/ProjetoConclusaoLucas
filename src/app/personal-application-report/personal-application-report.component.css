@@ -1,0 +1,63 @@
+.form-group {
+  position: absolute;
+  right: 16%;
+  top: 18%;
+  text-align: center;
+}
+
+.tittle {
+  margin-bottom: 40px;
+}
+
+.form {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 15px 30px 0px 30px;
+  width: 600px;
+  height: 450px;
+  text-align: left;
+}
+
+.observation {
+  color: #B2B2B2;
+  font: normal normal normal 10px Segoe UI;
+  margin-bottom: 20px;
+}
+
+.form-fields {
+  padding-top: 10px;
+}
+
+.left-margin {
+  margin-left: 20px;
+}
+
+.btn-search {
+  background-color: #74ABE130;
+  border: 1px solid #74ABE1;
+  border-radius: 8px;
+  text-transform: uppercase;
+  width: 70%;
+  height: 30px;
+  text-align: center;
+  padding-top: 10px;
+  font: normal normal bold 15px/20px Segoe UI;
+  letter-spacing: 0px;
+  color: #76ABE1;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  align-self: center;
+}
+
+
+.btn-search-disable {
+  cursor: default;
+  color: #74ABE133;
+  opacity: .6;
+}
+
+.icon-search {
+  width: 20px;
+  height: auto;
+}
