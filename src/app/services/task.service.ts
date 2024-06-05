@@ -52,4 +52,8 @@ export class TaskService {
   registerApplication(formData: any): Observable<any> {
     return this.http.post<any>(`${this.baseUrl}/vaccination/addApplication`, formData)
   }
+
+  getPatientAllApplications(patientId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/vaccination/patient/${patientId}`);
+  }
 }
