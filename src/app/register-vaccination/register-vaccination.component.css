@@ -1,22 +1,27 @@
 .form-group {
   position: absolute;
   right: 16%;
-  top: 8%;
+  top: 25%;
   text-align: center;
+}
+
+.tittle {
+  margin-bottom: 60px;
 }
 
 .form {
   background-color: #fff;
   border-radius: 8px;
-  padding: 10px 20px 10px 20px;
+  padding: 15px 30px 0px 30px;
   width: 600px;
-  height: 640px;
+  height: 275px;
   text-align: left;
 }
 
 .observation {
   color: #B2B2B2;
   font: normal normal normal 10px Segoe UI;
+  margin-bottom: 20px;
 }
 
 .form-fields {
@@ -40,14 +45,15 @@
   letter-spacing: 0px;
   color: #76ABE1;
   cursor: pointer;
+  margin-top: 15px;
 }
 
 .btn-search {
   background-color: #74ABE130;
   border: 1px solid #74ABE1;
-  border-radius: 8px;
+  border-radius: 50%;
   text-transform: uppercase;
-  width: 100%;
+  width: 95px;
   height: 30px;
   text-align: center;
   padding-top: 10px;
@@ -58,6 +64,7 @@
   margin-left: 20px;
   margin-bottom: 20px;
   align-self: center;
+  opacity: 1;
 }
 
 .btn-register-disable {
@@ -68,12 +75,10 @@
 .btn-search-disable {
   cursor: default;
   color: #74ABE133;
+  opacity: .6;
 }
 
-.half {
-  width: 48.3%;
-}
-
-.search {
-  display: flex;
+.icon-search {
+  width: 20px;
+  height: auto;
 }

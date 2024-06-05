@@ -11,7 +11,7 @@
             <mat-error *ngIf="searchForm.get('cpf')?.hasError">Campo Obrigatório</mat-error>
           </mat-form-field>
 
-          <div class="btn-search" [ngClass]="{'btn-update-disable': !searchForm.valid}" (click)="searchPatient()">Pesquisar Paciente</div>
+          <div class="btn-search" [ngClass]="{'btn-search-disable': !searchForm.valid}" (click)="searchPatient()">Pesquisar Paciente</div>
         </div>
       </form>
       <form [formGroup]="registerForm">
