@@ -56,4 +56,8 @@ export class TaskService {
   getPatientAllApplications(patientId: number): Observable<any> {
     return this.http.get<any>(`${this.baseUrl}/vaccination/patient/${patientId}`);
   }
+
+  getVaccineAllApplications(vaccineId: number): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/vaccination/vaccine/${vaccineId}`);
+  }
 }
